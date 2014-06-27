@@ -5,14 +5,16 @@
     <title>test</title>
   </head>
   <body>
+    <script src="jspm_packages/traceur@0.0.49.js"></script>
     <script src="jspm_packages/traceur-runtime@0.0.49.js"></script>
     <script src="jspm_packages/es6-module-loader@0.7.1.js"></script>
-    <script src="jspm_packages/system-csp@0.6.js"></script>
+    <script src="jspm_packages/system@0.6.js"></script>
     <script src="build.js"></script>
     <script src='config.js'></script>
-
     <script>
-      System.import('app/router');
+      System.import('app/router').then(function(router) {
+        router['default'].renderComponent(document.body);
+      });
     </script>
   </body>
 </html>

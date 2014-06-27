@@ -6,10 +6,11 @@ var AsyncReactComponent = {
       return;
     }
 
-    System.import(this.bundle).then(function(component) {
-      this.constructor.loadedComponent = component;
-      this.forceUpdate();
-    }).bind(this);
+    var self = this;
+    System.import(this.bundle).then(function(router) {
+      self.constructor.loadedComponent = component;
+      self.forceUpdate();
+    });
   },
 
   componentDidMount: function() {

@@ -15,5 +15,5 @@ var router = Router(
         )
     )
 );
-console.log("GO!");
-router.renderComponent(document.body);
+
+export default router;
