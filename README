@@ -1,0 +1,12 @@
+**watch the network tab between clicks to see the app fetch a es6 module on demand**
+
+npm install jspm
+
+jspm install react=github:reactjs/react-bower -o "{main: 'react', format: 'global'}" -f
+jspm install github:toranb/toranb-react-nested-router
+
+jspm bundle app/router
+
+python -m SimpleHTTPServer 3000
+
+visit http://localhost:3000 to see the running app
