@@ -2,12 +2,17 @@ var AsyncReactComponent = {
   loadedComponent: null,
 
   load: function() {
+    var self = this;
+
     if (this.constructor.loadedComponent) {
       return;
     }
 
-    var self = this;
-    System.import(this.bundle).then(function(router) {
+    System.import(this.bundle)
+    .then(function(es6_module) {
+      return es6_module.default;
+    })
+    .then(function(component) {
       self.constructor.loadedComponent = component;
       self.forceUpdate();
     });
