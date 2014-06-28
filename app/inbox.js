@@ -1,4 +1,4 @@
-import React from 'github:reactjs/react-bower';
+import React from 'react';
 
 var Inbox = React.createClass({
     render: function() {
